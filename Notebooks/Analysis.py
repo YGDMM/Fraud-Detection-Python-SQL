@@ -1,3 +1,8 @@
+# ==========================================
+# PHASE 1 - DATA LOADING & EXPLORATION
+# ==========================================
+
+
 # %%PASO 1 Extrar los datos del csv y mostrar la informacion basica
 
 import pandas as pd
@@ -99,7 +104,11 @@ def plot_comparison():
     plt.legend()
 
     plt.show()
-  
+
+
+# ==========================================
+# PHASE 2 - RULE-BASED FRAUD DETECTION
+# ==========================================
 
 # %%PASO 5 Crear reglas de deteccion de fraude
 
@@ -259,6 +268,11 @@ from sklearn.metrics import classification_report
 
 print("\nEVALUATION OF RULES:")
 print(classification_report(df_rules["Class"], df_rules["Rule_Fraud"]))
+
+
+# ==========================================
+# PHASE 3 - SQL FRAUD ANALYSIS
+# ==========================================
 
 
 # %% PASO 7 EXPORTAR A SQL
