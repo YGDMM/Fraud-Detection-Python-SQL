@@ -1,91 +1,155 @@
-# Fraud-Detection-Python-SQL
+# Fraud Detection Analysis using Python, SQL and Machine Learning
 
-This project focuses on analyzing financial transaction data to identify potential fraud patterns using Python and basic data analysis techniques.
+This project explores financial transaction data in order to identify suspicious behavior and analyze fraud-related patterns using:
 
-The goal is to simulate how fraud analysts detect suspicious activity using simple rules and data exploration.
+- Python
+- SQL
+- Data visualization
+- Rule-based detection
+- Machine Learning
 
----
-
-## Objectives
-
-- Analyze transaction data
-- Identify suspicious patterns
-- Apply basic fraud detection rules
-- (Optional) Build a simple machine learning model
+The project simulates part of a real fraud analysis workflow, beginning with exploratory analysis and evolving toward Machine Learning-based fraud detection.
 
 ---
 
-## Project Steps
+# Project Objectives
 
-### 1. Data Preparation
-- Load dataset (CSV)
-- Explore structure (columns, types, nulls)
-
-### 2. Data Analysis
-- Transaction distribution (amounts, frequency)
-- Identify unusual behaviors
-- Detect anomalies
-
-### 3. Rule-Based Detection
-Apply simple fraud rules, for example:
-- High transaction amount
-- Transactions from unusual locations
-- High frequency in short time
-
-### 4. SQL Analysis (Optional)
-- Load data into SQLite
-- Run queries to detect suspicious activity
-
-### 5. Visualization
-- Create plots to show patterns
-- Highlight suspicious transactions
-
-### 6. Machine Learning (Optional)
-- Train a basic model (Random Forest)
-- Compare results with rule-based detection
+- Analyze transaction behavior
+- Detect suspicious patterns
+- Explore fraud concentration trends
+- Compare rule-based systems against Machine Learning
+- Visualize fraud-related behaviors
+- Build a basic fraud detection pipeline
 
 ---
 
-## 📁 Project Structure
+# Techniques Used
 
-fraud-detection-python/
+## Exploratory Data Analysis (EDA)
 
+- Dataset inspection
+- Class imbalance analysis
+- Transaction distribution analysis
+- Fraud vs normal comparison
+
+## Rule-Based Detection
+
+Implemented several basic fraud detection rules:
+
+- High transaction amount detection
+- Small-value transaction detection
+- Zero-amount detection
+- Statistical anomaly detection (Z-Score)
+
+## SQL Fraud Analysis
+
+SQL queries were used to identify:
+
+- repeated transaction amounts
+- fraud concentration patterns
+- suspicious low-value behavior
+- comparative fraud vs normal distributions
+
+## Data Visualization
+
+Several visualizations were created using matplotlib:
+
+- histograms
+- comparative distributions
+- fraud concentration graphs
+- performance comparison charts
+- confusion matrix visualization
+
+## Machine Learning
+
+A Random Forest classifier was implemented using scikit-learn.
+
+The model was evaluated using:
+
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+- Feature Importance analysis
+
+---
+
+# Key Findings
+
+- Fraudulent transactions represented a very small percentage of the dataset.
+- Fraud activity showed concentration around specific rounded transaction amounts.
+- Rule-based systems showed limited effectiveness in detecting complex fraud behavior.
+- Machine Learning significantly improved fraud detection capability.
+- Certain anonymized variables played a major role in fraud classification.
+
+---
+
+# Project Structure
+
+```text
+Fraud-Analysis/
+
+├── .venv/
 ├── data/
-│   └── transactions.csv
+│   ├── transactions.csv
+│   └── fraud.db
 │
-├── src/
+├── notebooks/
 │   ├── analysis.py
-│   ├── rules.py
-│   └── model.py
+│   └── randomforest.py
 │
 ├── visuals/
-│   └── plots.png
+│   ├── fraud_vs_normal_distribution.png
+│   ├── concentration_comparison.png
+│   └── confusion_matrix.png
 │
-├── results/
-│   └── findings.txt
-│
+├── findings.md
+├── requirements.txt
 └── README.md
+```
 
 ---
 
-## 🛠 Tools & Libraries
+# Technologies Used
 
 - Python
 - pandas
 - numpy
 - matplotlib
-- scikit-learn (optional)
-- SQLite (optional)
+- seaborn
+- scikit-learn
+- SQLite
 
 ---
 
-## ⚠️ Disclaimer
+# Future Improvements
 
-This project is for educational purposes only.  
-The analysis is based on simulated or publicly available data.
+Potential future developments include:
+
+- behavioral fraud analysis
+- time-series analysis
+- real-time fraud detection
+- feature engineering
+- unsupervised anomaly detection
+- graph/network analysis
 
 ---
 
+# Disclaimer
+
+This project was developed for educational and portfolio purposes only.
+
+The dataset used contains anonymized financial transaction information.
+
+---
+
+# Author
+
+Background:
+- Criminology
+- Cyber Investigation
+- Fraud Analysis
+- Intelligence & Security Studies
 ## 👤 Author
 
 Focus: Fraud Analysis | Data Analysis | Cyber Investigation
