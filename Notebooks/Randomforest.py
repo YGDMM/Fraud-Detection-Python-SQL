@@ -1,3 +1,7 @@
+# ==========================================
+# PHASE 4 - MACHINE LEARNING (RANDOM FOREST)
+# ==========================================
+
 # %% IMPORTS
 
 import pandas as pd
