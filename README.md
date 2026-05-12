@@ -99,9 +99,10 @@ Fraud-Analysis/
 │   └── randomforest.py
 │
 ├── visuals/
-│   ├── fraud_vs_normal_distribution.png
-│   ├── concentration_comparison.png
+│   ├── fraud_vs_normal_concentration.png
+│   ├── ML_features.png
 │   └── confusion_matrix.png
+│   └── Rules vs ML
 │
 ├── findings.md
 ├── requirements.txt
