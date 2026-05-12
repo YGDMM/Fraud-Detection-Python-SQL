@@ -1,89 +1,217 @@
-# Fraud Detection Findings
+# Fraud Detection Analysis
 
-## Objective
+---
 
-The objective of this project was to explore transaction patterns
-and identify suspicious behaviors using Python, SQL and basic
-rule-based fraud detection techniques.
+# Executive Summary
 
-## Initial Dataset Observations
+This project explored financial transaction patterns in order to identify potentially fraudulent behavior using Python, SQL and Machine Learning techniques.
 
-- Fraud transactions represented a very small percentage
-  of the dataset (~0.17%).
+The analysis began with exploratory data analysis and rule-based fraud detection methods, including transaction amount thresholds, anomaly detection and statistical filtering techniques. While these approaches helped identify suspicious behaviors, their predictive performance remained limited due to the complexity and imbalance of fraud-related data.
 
-- Fraudulent transactions showed a wider distribution
-  compared to normal transactions.
+SQL-based analysis revealed that fraudulent transactions tended to concentrate around specific rounded amounts, particularly low-value transactions, suggesting possible testing behavior commonly associated with compromised payment methods.
 
-- Small transaction amounts appeared frequently in fraud cases,
-  potentially indicating card testing behavior.
+To improve detection capability, a Random Forest Machine Learning model was implemented. The model significantly outperformed static rule-based systems by identifying complex multivariable patterns within anonymized transaction features. Feature importance analysis showed that several variables played a major role in fraud classification, demonstrating the effectiveness of Machine Learning for modern fraud detection scenarios.
 
-## Rule-Based Detection Results
+Overall, the project demonstrates a complete fraud analysis workflow combining exploratory analysis, SQL investigation, statistical reasoning, visualization techniques and Machine Learning-based detection.
 
-Several rule-based techniques were implemented:
+---
+
+# Project Objective
+
+The objective of this project was to explore transaction behavior patterns and evaluate different fraud detection approaches using:
+
+- Python
+- SQL
+- Statistical analysis
+- Data visualization
+- Rule-based detection
+- Machine Learning models
+
+The project also aimed to compare traditional static detection methods against Machine Learning approaches in highly imbalanced fraud datasets.
+
+---
+
+# Initial Dataset Observations
+
+- Fraud transactions represented a very small percentage of the dataset (~0.17%).
+- The dataset was highly imbalanced, creating additional challenges for fraud detection.
+- Fraudulent transactions showed wider dispersion compared to normal transactions.
+- Small transaction amounts appeared frequently in fraud cases, potentially indicating card-testing activity.
+- Normal transactions followed more stable and predictable distribution patterns.
+
+---
+
+# Rule-Based Detection Analysis
+
+Several rule-based detection techniques were implemented:
+
+## Detection Rules
 
 - High transaction amount detection
 - Zero-amount transaction detection
 - Extremely small transaction detection
-- Statistical anomaly detection using Z-Score
+- Statistical anomaly detection using Z-Score analysis
 
-The rule-based system achieved limited precision and recall,
-showing that simple static rules are insufficient for reliable
-fraud detection in highly imbalanced datasets.
+## Results
 
-However, the process helped identify suspicious transaction
-patterns and understand fraud behavior.
+The rule-based system achieved limited precision and recall performance.
 
-## SQL Pattern Analysis
+Although certain suspicious behaviors were successfully identified, the system struggled to detect more complex fraud patterns due to:
 
-SQL analysis revealed several interesting behaviors:
+- high dataset imbalance
+- static detection logic
+- lack of behavioral context
+- inability to capture multivariable relationships
 
-- Fraudulent transactions showed strong concentration around
-  very small rounded amounts.
+Despite these limitations, the rule-based approach provided valuable insight into transaction behavior and served as a strong foundation for further analytical development.
 
-- Certain amounts appeared significantly more frequently in
-  fraud cases than in normal transactions.
+---
 
-- Fraud patterns appeared more concentrated around specific
-  transaction values compared to normal behavior.
+# SQL Pattern Analysis
 
-- Repetition analysis suggested that repeated small-value
-  transactions may be linked to fraudulent testing activity.
+SQL analysis revealed several relevant fraud-related behaviors.
 
-## Visual Analysis
+## Transaction Concentration
 
-Visual comparison between fraud and normal transactions
-showed:
+Fraudulent transactions showed strong concentration around specific rounded transaction amounts, especially low-value transfers.
+
+Certain transaction amounts appeared significantly more frequently in fraudulent cases than in normal transaction behavior.
+
+## Repetition Analysis
+
+Repeated low-value transactions represented a substantial percentage of total fraud cases.
+
+This pattern may indicate:
+
+- card testing behavior
+- automated fraud attempts
+- validation transactions before larger fraudulent operations
+
+## Comparative Analysis
+
+Comparative SQL queries between fraud and normal transactions revealed that fraudulent activity displayed stronger concentration patterns around specific transaction values compared to legitimate behavior.
+
+---
+
+# Visual Analysis
+
+Several visualizations were developed to compare fraud and normal transaction behavior.
+
+## Main Findings
 
 - Normal transactions followed a more regular distribution.
+- Fraudulent transactions displayed higher dispersion.
+- Fraud cases showed stronger concentration around certain rounded amounts.
+- Comparative bar charts highlighted significant behavioral differences between both classes.
 
-- Fraudulent transactions displayed higher dispersion and
-  stronger concentration in specific rounded amounts.
+Visual analysis proved useful for identifying hidden patterns that were not immediately visible through raw numerical analysis alone.
 
-- Comparative bar charts helped identify differences in
-  transaction concentration between both classes.
+---
 
-## Limitations
+# Machine Learning Analysis
 
-This project focused primarily on exploratory analysis and
-basic fraud detection logic.
+A Random Forest Machine Learning model was implemented to improve fraud detection performance.
 
-The rule-based approach produced limited predictive accuracy,
-which highlights the complexity of fraud detection problems.
+## Model Performance
 
-Future improvements may include:
+The Machine Learning model significantly outperformed the rule-based detection system across all major evaluation metrics:
 
-- Machine learning models
-- Behavioral analysis
-- Time-series analysis
-- Feature engineering
-- Real-time detection systems
+- Precision
+- Recall
+- F1-Score
 
-## Conclusion
+The model demonstrated strong capability to detect complex fraud patterns while maintaining high classification accuracy.
 
-This project demonstrates a complete fraud analysis workflow
-using Python, SQL and data visualization techniques.
+## Feature Importance
 
-The analysis provided valuable insight into transaction
+Feature importance analysis revealed that several anonymized variables contributed heavily to fraud detection.
+
+The most relevant features included:
+
+- V17
+- V14
+- V12
+- V10
+- V16
+
+These variables likely represent complex statistical relationships extracted through anonymization techniques such as Principal Component Analysis (PCA).
+
+The model successfully identified patterns that were not detectable through manual rule creation alone.
+
+---
+
+# Rules vs Machine Learning
+
+The comparison between static rules and Machine Learning highlighted important differences:
+
+## Rule-Based Systems
+
+Advantages:
+- Simple to implement
+- Easy to interpret
+- Useful for preliminary filtering
+
+Limitations:
+- Low adaptability
+- Poor performance on complex fraud behavior
+- Limited scalability
+
+## Machine Learning Models
+
+Advantages:
+- Strong pattern recognition capability
+- Better performance on imbalanced datasets
+- Ability to detect multivariable relationships
+- Higher fraud detection effectiveness
+
+Limitations:
+- Lower interpretability
+- Greater computational complexity
+- Requires training data and tuning
+
+---
+
+# Limitations
+
+This project focused primarily on exploratory analysis and foundational fraud detection techniques.
+
+Several limitations remain:
+
+- anonymized dataset structure
+- absence of behavioral user identifiers
+- lack of real-time transactional context
+- no temporal sequence modeling
+- limited feature engineering
+
+---
+
+# Future Improvements
+
+Potential future developments include:
+
+- advanced feature engineering
+- behavioral analysis
+- time-series fraud detection
+- deep learning models
+- real-time fraud monitoring systems
+- graph/network analysis
+- unsupervised anomaly detection
+
+---
+
+# Conclusion
+
+This project demonstrates a complete fraud analysis workflow combining:
+
+- exploratory analysis
+- SQL investigation
+- statistical reasoning
+- visualization techniques
+- Machine Learning-based fraud detection
+
+The analysis showed that while rule-based systems can identify basic suspicious behavior, Machine Learning models provide significantly stronger detection capability in complex fraud scenarios.
+
+The project also highlights the importance of combining technical analysis with analytical interpretation in modern fraud investigation environments.
 patterns and common fraud behaviors while highlighting
 the challenges of detecting fraud using static rules alone.
 
