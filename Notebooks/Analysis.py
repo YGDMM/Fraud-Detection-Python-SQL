@@ -129,8 +129,7 @@ df_rules["High_Amount_Flag"] = (
 # REGLA 2 - TRANSACCIONES CON IMPORTE 0
 # ---------------------------------------------------
 
-# En datasets de fraude financiero,
-# las transacciones con valor 0 pueden ser anómalas
+# Las transacciones con valor 0 pueden ser anómalas
 
 df_rules["Zero_Amount_Flag"] = (
     df_rules["Amount"] == 0
@@ -152,7 +151,7 @@ df_rules["Small_Amount_Flag"] = (
 # ---------------------------------------------------
 
 # Si una transacción cumple UNA de las reglas,
-# la marcamos como sospechosa
+# Se marca como sospechosa
 
 df_rules["Rule_Fraud"] = (
 
@@ -265,7 +264,7 @@ print(classification_report(df_rules["Class"], df_rules["Rule_Fraud"]))
 # %% PASO 7 EXPORTAR A SQL
 
 
-# Creamos (o conectamos) una base de datos llamada fraud.db
+# Creamos una base de datos llamada fraud.db
 
 conn = sqlite3.connect("data/fraud.db")
 
@@ -299,10 +298,6 @@ high_amount_df = pd.read_sql(query, conn)
 print("\nHIGH AMOUNT TRANSACTIONS:")
 
 print(high_amount_df.head())
-
-# Cerramos conexión
-
-conn.close()
 
 # %% PASO 8.1 - SQL QUERIES TOP TRANSACTIONS
 
@@ -607,7 +602,9 @@ print("\nFRAUD AMOUNT CONCENTRATION:")
 
 print(fraud_concentration)
 
+# Cerramos conexión
 
+conn.close()
 
 # %% PASO 8.7 FRAUD VS NORMAL PERCENTAGE COMPARISON
 
